@@ -1,0 +1,1068 @@
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+0.0 0.0 0.0
++-------------+
++--Resultado treinamento OR --+
+0.0 1.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 0.0 1.0
++-------------+
++--Resultado treinamento OR --+
+1.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+0.0 0.0 0.0
++-------------+
++--Resultado treinmento AND--+
+0.0 1.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 0.0 1.0
++-------------+
++--Resultado treinmento AND--+
+1.0 1.0 1.0
++-------------+
