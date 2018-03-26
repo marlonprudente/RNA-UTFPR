@@ -27,6 +27,7 @@ public class Perceptron {
     private Double[] peso_or;
     private boolean tipo_treinamento;
 
+    //Funçõ de ativação: Degrau
     private Double Degrau(Double x) {
         if (x > 0) {
             return 1.0;
@@ -34,7 +35,7 @@ public class Perceptron {
             return 0.0;
         }
     }
-
+    //Potencial de Ativação u
     private Double potencialAtivacao(Double[] entrada, Double pesos[]) {
 
         Double saida = 0.0;
@@ -44,7 +45,8 @@ public class Perceptron {
         }
         return saida;
     }
-
+    
+    //regra de atualização dos pesos
     private Double regraDelta(Double entrada, Double peso, Double erro) {
 
         return (peso + (this.taxa_aprendizado * erro * entrada));
@@ -66,10 +68,12 @@ public class Perceptron {
             FileWriter arq = new FileWriter("saida.txt");
             PrintWriter gravarArq = new PrintWriter(arq);
             BufferedReader br = new BufferedReader(new FileReader("treinamento.txt"));
+            
             for (int j = 0; j < this.epoca; j++) {
                 for (int tam = 0; tam < 4; tam++) {
                     String linha = br.readLine();
                     String[] treino;
+                    
                     if (linha.contains("AND")) {
                         treino = linha.split(" ");
                         entrada_treino[0] = Double.parseDouble(treino[1]);
@@ -78,8 +82,7 @@ public class Perceptron {
                         Double saida = 0.0;
                         saida = Degrau(potencialAtivacao(entrada_treino, peso_and));
                         erro = saida_treino - saida;
-                        if (erro > 0) {
-                            System.out.println("Entrei");
+                        if (erro!=0) {
                             for (int i = 0; i < 2; i++) {
                                 peso_and[i] = regraDelta(entrada_treino[i], peso_and[i], erro);
                             }
@@ -99,7 +102,7 @@ public class Perceptron {
                         Double saida = 0.0;
                         saida = Degrau(potencialAtivacao(entrada_treino, peso_or));
                         erro = saida_treino - saida;
-                        if (erro > 0) {
+                        if (erro!=0) {
                             for (int i = 0; i < 2; i++) {
                                 peso_or[i] = regraDelta(entrada_treino[i], peso_or[i], erro);
                             }
@@ -124,15 +127,11 @@ public class Perceptron {
     }
 
     public Double Neuronio_OR(Double[] entrada) {
-        System.out.println("Peso_OR_0: " + peso_or[0] + " Ent0: " + entrada[0]);
-        System.out.println("Peso_OR_1: " + peso_or[1] + " Ent1: " + entrada[1]);
         return Degrau(potencialAtivacao(entrada, peso_or));
 
     }
 
     public Double Neuronio_AND(Double[] entrada) {
-        System.out.println("Peso_AND_0: " + peso_and[0] + " Ent0: " + entrada[0]);
-        System.out.println("Peso_AND_1: " + peso_and[1] + " Ent1: " + entrada[1]);
         return Degrau(potencialAtivacao(entrada, peso_and));
     }
 
