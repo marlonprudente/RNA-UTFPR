@@ -79,6 +79,7 @@ public class Adalaine {
             epoca = 500;
             //Matriz preenchida
             do {
+                eqm = 0.0;
                 if (t == Treinamento.Padrao) {
 
                     for (int i = 0; i < 15; i++) {
@@ -95,8 +96,7 @@ public class Adalaine {
                         System.out.println("Eqm: " + eqm);
                         System.out.println("Erro: " + erro);
                         System.out.println("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]);
-                    }
-                    eqm = 1 / 30 * eqm;
+                    }                    
                     epoca--;
                     gravarArq.print(epoca+" %n");
                     gravarArq.print("=Padrao= %n");
@@ -109,7 +109,9 @@ public class Adalaine {
                         eqm += (Math.pow(matriz_treino[i][4] - saida, 2));
                         erro = (matriz_treino[i][4] - saida);
                         if (erro>0) {
-                            batelada += erro;
+                            batelada += regraDelta(matriz_treino[i][1], peso[0], erro);
+                            batelada += regraDelta(matriz_treino[i][2], peso[1], erro);
+                            batelada += regraDelta(matriz_treino[i][3], peso[2], erro);
                         }
                     }
                     if(batelada>0){
@@ -122,12 +124,13 @@ public class Adalaine {
                     System.out.println("Eqm: " + eqm);
                     System.out.println("Erro: " + erro);
                     System.out.println("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]);                    
-                    eqm = 1 / 15 * eqm;
+                    
                     epoca--;
                     gravarArq.print(epoca+"%n");
                     gravarArq.print("=Batelada=%n");
                     gravarArq.print("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]+"%n");
-                }               
+                } 
+                eqm = 1 / 15 * eqm;
             } while (epoca != 0 || eqm > 0.1);
             arq.close();
             br.close();
