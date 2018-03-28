@@ -108,13 +108,16 @@ public class Adalaine {
                         saida = potencialAtivacao(matriz_treino[i][1], matriz_treino[i][2], matriz_treino[i][3], peso);
                         eqm += (Math.pow(matriz_treino[i][4] - saida, 2));
                         erro = (matriz_treino[i][4] - saida);
-                        if (!Objects.equals(saida, matriz_treino[i][4])) {
+                        if (erro>0) {
                             batelada += erro;
                         }
                     }
-                    peso[0] = batelada;
-                    peso[1] = batelada;
-                    peso[2] = batelada;
+                    if(batelada>0){
+                    peso[0] += batelada;
+                    peso[1] += batelada;
+                    peso[2] += batelada;
+                    }
+
                     System.out.println("Saida: " + saida);
                     System.out.println("Eqm: " + eqm);
                     System.out.println("Erro: " + erro);
