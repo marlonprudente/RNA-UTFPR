@@ -96,7 +96,7 @@ public class Adalaine {
                         System.out.println("Erro: " + erro);
                         System.out.println("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]);
                     }
-                    eqm = 1 / 15 * eqm;
+                    eqm = 1 / 30 * eqm;
                     epoca--;
                     gravarArq.print(epoca+" %n");
                     gravarArq.print("=Padrao= %n");
@@ -145,6 +145,10 @@ public class Adalaine {
             }
             System.out.println("");
         }
+    }
+    
+    public Double Resultado(Double x1, Double x2, Double x3){
+        return potencialAtivacao(x1, x2, x3, peso);
     }
 
 }

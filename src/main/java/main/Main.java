@@ -25,6 +25,7 @@ public class Main {
         
         //Funcao(1.0*(2*Math.PI));
         Adalaine a = new Adalaine(0.1, Treinamento.Batelada);
+        System.out.println("Resultado: " + a.Resultado(0.588, -0.809, 2.513)); //-3.265
         
         
 
