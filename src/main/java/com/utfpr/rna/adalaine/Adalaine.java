@@ -76,6 +76,7 @@ public class Adalaine {
             Double saida = 0.0;
             Double erro = 0.0;
             Double eqm = 0.0;
+            epoca = 500;
             //Matriz preenchida
             do {
                 if (t == Treinamento.Padrao) {
@@ -83,12 +84,13 @@ public class Adalaine {
                     for (int i = 0; i < 15; i++) {
                         saida = potencialAtivacao(matriz_treino[i][1], matriz_treino[i][2], matriz_treino[i][3], peso);
                         eqm += (Math.pow(matriz_treino[i][4] - saida, 2));
-                        erro = 0.5 * Math.pow(matriz_treino[i][4] - saida, 2);
-                        if (!Objects.equals(saida, matriz_treino[i][4])) {
+                        erro = (matriz_treino[i][4] - saida);
+                        if (erro>0) {
                             peso[0] = regraDelta(matriz_treino[i][1], peso[0], erro);
                             peso[1] = regraDelta(matriz_treino[i][2], peso[1], erro);
                             peso[2] = regraDelta(matriz_treino[i][3], peso[2], erro);
                         }
+                        System.out.println("Epoca: " + epoca);
                         System.out.println("Saida: " + saida);
                         System.out.println("Eqm: " + eqm);
                         System.out.println("Erro: " + erro);
@@ -96,13 +98,16 @@ public class Adalaine {
                     }
                     eqm = 1 / 15 * eqm;
                     epoca--;
+                    gravarArq.print(epoca+" %n");
+                    gravarArq.print("=Padrao= %n");
+                    gravarArq.print("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]+"%n");
                 }
                 if (t == Treinamento.Batelada) {
                     Double batelada = 0.0;
                     for (int i = 0; i < 15; i++) {
                         saida = potencialAtivacao(matriz_treino[i][1], matriz_treino[i][2], matriz_treino[i][3], peso);
                         eqm += (Math.pow(matriz_treino[i][4] - saida, 2));
-                        erro = 0.5 * Math.pow(matriz_treino[i][4] - saida, 2);
+                        erro = (matriz_treino[i][4] - saida);
                         if (!Objects.equals(saida, matriz_treino[i][4])) {
                             batelada += erro;
                         }
@@ -113,12 +118,14 @@ public class Adalaine {
                     System.out.println("Saida: " + saida);
                     System.out.println("Eqm: " + eqm);
                     System.out.println("Erro: " + erro);
-                    System.out.println("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]);
-                    batelada = 0.0;
+                    System.out.println("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]);                    
                     eqm = 1 / 15 * eqm;
                     epoca--;
-                }
-            } while (eqm < 0.1 || erro > 0.1 || epoca != 0);
+                    gravarArq.print(epoca+"%n");
+                    gravarArq.print("=Batelada=%n");
+                    gravarArq.print("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]+"%n");
+                }               
+            } while (epoca != 0 || eqm > 0.1);
             arq.close();
             br.close();
         } catch (IOException ioe) {

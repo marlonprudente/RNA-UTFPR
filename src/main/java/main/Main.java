@@ -24,7 +24,7 @@ public class Main {
         //System.out.println("OR: " + p.Neuronio_OR(entrada) + "/ AND: " + p.Neuronio_AND(entrada));
         
         //Funcao(1.0*(2*Math.PI));
-        Adalaine a = new Adalaine(0.1, Treinamento.Batelada);
+        Adalaine a = new Adalaine(0.1, Treinamento.Padrao);
         
         
 
