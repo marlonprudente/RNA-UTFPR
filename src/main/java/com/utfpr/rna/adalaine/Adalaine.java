@@ -22,8 +22,9 @@ public class Adalaine {
 
     public Double[][] matriz_treino = new Double[15][5];
     public Double taxa_aprendizado;
-    public int epoca = 100;
-    private Double[] peso = new Double[3];
+    public int epoca = 5000;
+    public Double teta;
+    private Double[] peso = new Double[4];
 
     public enum Treinamento {
         Padrao(0), Batelada(1);
@@ -44,16 +45,18 @@ public class Adalaine {
 
     private Double potencialAtivacao(Double entrada1, Double entrada2, Double entrada3, Double pesos[]) {
         Double saida = 0.0;
-        saida += pesos[0] * entrada1;
-        saida += pesos[1] * entrada2;
-        saida += pesos[2] * entrada3;
+        saida += pesos[0] * teta;
+        saida += pesos[1] * entrada1;
+        saida += pesos[2] * entrada2;
+        saida += pesos[3] * entrada3;
         return saida;
     }
 
     public Adalaine(Double tx_aprend, Treinamento t) {
         taxa_aprendizado = tx_aprend;
+        teta = 1.0;
         Random r = new Random();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             peso[i] = r.nextDouble();
         }
 
@@ -72,64 +75,69 @@ public class Adalaine {
                     }
                 }
             }
-            //ImprimirMatriz();
+            ImprimirMatriz();
             Double saida = 0.0;
             Double erro = 0.0;
-            Double eqm = 0.0;
-            epoca = 500;
+            Double eqm = 0.0;  
+            Double[] batelada = new Double[4];
             //Matriz preenchida
             do {
                 eqm = 0.0;
                 if (t == Treinamento.Padrao) {
-
                     for (int i = 0; i < 15; i++) {
                         saida = potencialAtivacao(matriz_treino[i][1], matriz_treino[i][2], matriz_treino[i][3], peso);
                         eqm += (Math.pow(matriz_treino[i][4] - saida, 2));
                         erro = (matriz_treino[i][4] - saida);
-                        if (erro>0) {
-                            peso[0] = regraDelta(matriz_treino[i][1], peso[0], erro);
-                            peso[1] = regraDelta(matriz_treino[i][2], peso[1], erro);
-                            peso[2] = regraDelta(matriz_treino[i][3], peso[2], erro);
+                        if (erro!=0) {
+                            peso[0] = regraDelta(teta, peso[0], erro);
+                            peso[1] = regraDelta(matriz_treino[i][1], peso[1], erro);
+                            peso[2] = regraDelta(matriz_treino[i][2], peso[2], erro);
+                            peso[3] = regraDelta(matriz_treino[i][3], peso[3], erro);
                         }
                         System.out.println("Epoca: " + epoca);
                         System.out.println("Saida: " + saida);
                         System.out.println("Eqm: " + eqm);
                         System.out.println("Erro: " + erro);
-                        System.out.println("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]);
-                    }                    
-                    epoca--;
+                        System.out.println("w1: " + peso[1] + " w2: " + peso[2] + " w3: " + peso[3]);
+                    }
                     gravarArq.print(epoca+" %n");
                     gravarArq.print("=Padrao= %n");
-                    gravarArq.print("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]+"%n");
+                    gravarArq.print("w1: " + peso[1] + " w2: " + peso[2] + " w3: " + peso[3]+"%n");
                 }
+                //===============================================================================================
                 if (t == Treinamento.Batelada) {
-                    Double batelada = 0.0;
+                    batelada[0] = 0.0;
+                    batelada[1] = 0.0;
+                    batelada[2] = 0.0;
+                    batelada[3] = 0.0;
                     for (int i = 0; i < 15; i++) {
                         saida = potencialAtivacao(matriz_treino[i][1], matriz_treino[i][2], matriz_treino[i][3], peso);
                         eqm += (Math.pow(matriz_treino[i][4] - saida, 2));
                         erro = (matriz_treino[i][4] - saida);
-                        if (erro>0) {
-                            batelada += regraDelta(matriz_treino[i][1], peso[0], erro);
-                            batelada += regraDelta(matriz_treino[i][2], peso[1], erro);
-                            batelada += regraDelta(matriz_treino[i][3], peso[2], erro);
+                        if (erro!=0) {
+                            batelada[0] += teta*peso[0]* erro;
+                            batelada[1] += matriz_treino[i][1]*peso[1]* erro;
+                            batelada[2] += matriz_treino[i][2]*peso[2]* erro;
+                            batelada[3] += matriz_treino[i][3]*peso[3]* erro;
                         }
                     }
-                    if(batelada>0){
-                    peso[0] += batelada;
-                    peso[1] += batelada;
-                    peso[2] += batelada;
-                    }
-
+                    
+                    peso[0] += (1/15)*batelada[0];
+                    peso[1] += (1/15)*batelada[1];
+                    peso[2] += (1/15)*batelada[2];
+                    peso[3] += (1/15)*batelada[3];
+                    
+                    System.out.println("Epoca: " + epoca);
                     System.out.println("Saida: " + saida);
                     System.out.println("Eqm: " + eqm);
                     System.out.println("Erro: " + erro);
-                    System.out.println("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]);                    
+                    System.out.println("w1: " + peso[1] + " w2: " + peso[2] + " w3: " + peso[3]);
                     
-                    epoca--;
                     gravarArq.print(epoca+"%n");
                     gravarArq.print("=Batelada=%n");
-                    gravarArq.print("w1: " + peso[0] + " w2: " + peso[1] + " w3: " + peso[2]+"%n");
+                    gravarArq.print("w1: " + peso[1] + " w2: " + peso[2] + " w3: " + peso[3]+"%n");
                 } 
+                epoca--;
                 eqm = 1 / 15 * eqm;
             } while (epoca != 0 || eqm > 0.1);
             arq.close();

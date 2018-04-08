@@ -89,6 +89,7 @@ public class Perceptron {
             Double saidaYand = null;
             Double saidaYor = null;
             Double error = null;
+            Double[] batelada = new Double[4] ;
             for (int i = 0; i < 4; i++) {
                 String linha_and = brand.readLine();
                 treino_and = linha_and.split(" ");
@@ -139,8 +140,7 @@ public class Perceptron {
                 }
 
                 if (t == Treinamento.Batelada) {
-                    gravarArq.printf("==>Treinamento Batelada%n");
-                    Double[] batelada = new Double[3];
+                    gravarArq.printf("==>Treinamento Batelada%n");                    
                     batelada[0] = 0.0;
                     batelada[1] = 0.0;
                     batelada[2] = 0.0;
@@ -148,16 +148,15 @@ public class Perceptron {
                         saidaYand = Degrau(potencialAtivacao(treinamento_and[tam][0], treinamento_and[tam][1], peso_and));
                         error = treinamento_and[tam][2] - saidaYand;
                         if (error != 0) {
-                            batelada[0] += error;
-                            batelada[1] += error;
-                            batelada[2] += error;
+                            batelada[0] += teta*peso_and[0]* error;
+                            batelada[1] += treinamento_and[tam][0]*peso_and[1]* error;
+                            batelada[2] += treinamento_and[tam][1]*peso_and[2]* error;
                         }
-                    }
-                    for (int tam = 0; tam < 4; tam++) {
-                        peso_and[0] = regraDelta(teta, peso_and[0], batelada[0]);;
-                        peso_and[1] = regraDelta(treinamento_and[tam][0], peso_and[1], batelada[1]);
-                        peso_and[2] = regraDelta(treinamento_and[tam][1], peso_and[2], batelada[2]);
-                    }
+                    }                    
+                        peso_and[0] += batelada[0];
+                        peso_and[1] += batelada[1];
+                        peso_and[2] += batelada[2];
+                    
                     gravarArq.printf("AND: w1: " + peso_and[1] + " w2: " + peso_and[2] + " Erro: " + error + " Saida: " + saidaYand + "%n");
                     //=============================
                     batelada[0] = 0.0;
@@ -167,16 +166,14 @@ public class Perceptron {
                         saidaYor = Degrau(potencialAtivacao(treinamento_or[tam][0], treinamento_or[tam][1], peso_or));
                         error = treinamento_or[tam][2] - saidaYor;
                         if (error != 0) {
-                            batelada[0] += error;
-                            batelada[1] += error;
-                            batelada[2] += error;
+                            batelada[0] += teta*peso_or[0]* error;
+                            batelada[1] += treinamento_or[tam][0]*peso_or[1]* error;
+                            batelada[2] += treinamento_or[tam][1]*peso_or[2]* error;
                         }
                     }
-                    for (int tam = 0; tam < 4; tam++) {
-                        peso_or[0] = regraDelta(teta, peso_or[0], batelada[0]);;
-                        peso_or[1] = regraDelta(treinamento_or[tam][0], peso_or[1], batelada[1]);
-                        peso_or[2] = regraDelta(treinamento_or[tam][1], peso_or[2], batelada[2]);
-                    }
+                        peso_or[0] += batelada[0];
+                        peso_or[1] += batelada[1];
+                        peso_or[2] += batelada[2];
                     gravarArq.printf("OR: w1: " + peso_or[1] + " w2: " + peso_or[2] + " Erro: " + error + " Saida: " + saidaYor + "%n");
                     gravarArq.print(j + "%n");
                     gravarArq.printf("+-------------+%n");
@@ -193,12 +190,14 @@ public class Perceptron {
     }
 
     public Double Neuronio_OR(Double[] entrada) {
-
+        System.out.println("OR: ");
+        System.out.println("Peso 0: " + peso_or[0] + " // Peso 1: " + peso_or[1] + " // Peso 2: " + peso_or[2]);
         return Degrau(potencialAtivacao(entrada[0], entrada[1], peso_or));
 
     }
 
     public Double Neuronio_AND(Double entrada[]) {
+        System.out.println("AND: ");
         System.out.println("Peso 0: " + peso_and[0] + " // Peso 1: " + peso_and[1] + " // Peso 2: " + peso_and[2]);
         //System.out.println("Saida: " + Degrau(potencialAtivacao(entrada[0], entrada[1], peso_and)));
         return Degrau(potencialAtivacao(entrada[0], entrada[1], peso_and));

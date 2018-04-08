@@ -5,7 +5,7 @@
  */
 package main;
 
-import com.utfpr.rna.adalaine.Adalaine;
+//import com.utfpr.rna.adalaine.Adalaine;
 //import com.utfpr.rna.adalaine.Adalaine.Treinamento;
 import com.utfpr.rna.perceptron.Perceptron;
 import com.utfpr.rna.perceptron.Perceptron.Treinamento;
@@ -24,9 +24,10 @@ public class Main {
         entrada[1] = 0.0;
         System.out.println("OR: " + p.Neuronio_OR(entrada) + "/ AND: " + p.Neuronio_AND(entrada));
         
-        //Funcao(1.0*(2*Math.PI));
-        //Adalaine a = new Adalaine(0.1, Treinamento.Batelada);
-        //System.out.println("Resultado: " + a.Resultado(0.588, -0.809, 2.513)); //-3.265
+//        Funcao(2.513);
+//        Adalaine a = new Adalaine(0.1, Treinamento.Batelada);
+//        
+//        System.out.println("Resultado: " + a.Resultado(0.588, -0.809, 2.513)); //-3.265
         
         
 
