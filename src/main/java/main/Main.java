@@ -6,8 +6,9 @@
 package main;
 
 import com.utfpr.rna.adalaine.Adalaine;
-import com.utfpr.rna.adalaine.Adalaine.Treinamento;
+//import com.utfpr.rna.adalaine.Adalaine.Treinamento;
 import com.utfpr.rna.perceptron.Perceptron;
+import com.utfpr.rna.perceptron.Perceptron.Treinamento;
 import static java.lang.Math.*;
 
 /**
@@ -17,15 +18,15 @@ import static java.lang.Math.*;
 
 public class Main {
     public static void main(String[] args) {
-        //Perceptron p = new Perceptron(0.1, Treinamento.Padrao);
-        //Double[] entrada = new Double[2];
-        //entrada[0] = 0.0;
-        //entrada[1] = 1.0;
-        //System.out.println("OR: " + p.Neuronio_OR(entrada) + "/ AND: " + p.Neuronio_AND(entrada));
+        Perceptron p = new Perceptron(0.001, Treinamento.Batelada);
+        Double[] entrada = new Double[2];
+        entrada[0] = 0.0;
+        entrada[1] = 0.0;
+        System.out.println("OR: " + p.Neuronio_OR(entrada) + "/ AND: " + p.Neuronio_AND(entrada));
         
         //Funcao(1.0*(2*Math.PI));
-        Adalaine a = new Adalaine(0.1, Treinamento.Batelada);
-        System.out.println("Resultado: " + a.Resultado(0.588, -0.809, 2.513)); //-3.265
+        //Adalaine a = new Adalaine(0.1, Treinamento.Batelada);
+        //System.out.println("Resultado: " + a.Resultado(0.588, -0.809, 2.513)); //-3.265
         
         
 
