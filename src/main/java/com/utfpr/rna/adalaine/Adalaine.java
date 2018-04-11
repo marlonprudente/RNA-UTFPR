@@ -64,9 +64,9 @@ public class Adalaine {
                     }
                 }
             }
-            Double saida = 0.0;
-            Double erro = 0.0;
-            Double eqm = 0.0;
+            Double saida;
+            Double erro;
+            Double eqm;
             Double[] batelada = new Double[4];
             //Matriz preenchida
             gravarArq.print("Taxa de Aprendizagem: " + taxa_aprendizado + " | Padroes: " + qtPadroes + "\r\n");
