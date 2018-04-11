@@ -15,7 +15,7 @@ import java.util.Locale;
 
 /**
  *
- * @author marlo
+ * @author Marlon Prudente
  */
 public class Main {
 
@@ -129,7 +129,7 @@ public class Main {
                 OP = s.nextInt();
 
             }
-            System.out.println("\nIsto fica feliz em ser útil!...");
+            System.out.println("\nIsto fica feliz em ser útil!...¯\\_(+.+)_/¯");
 
         } catch (InputMismatchException e) {
             System.out.println("" + e);
@@ -137,7 +137,6 @@ public class Main {
     }
 
     public static void Funcao(Double z) {
-
         Double saida = -Math.PI + 0.565 * sin(z) + 2.657 * cos(z) + 0.674 * z;
         System.out.println("z: " + z);
         System.out.println("f1(z): " + sin(z));

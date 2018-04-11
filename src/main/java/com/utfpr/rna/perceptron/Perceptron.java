@@ -5,8 +5,6 @@
  */
 package com.utfpr.rna.perceptron;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -26,8 +24,8 @@ public class Perceptron {
     private int epoca;
     private Double[] peso_and;
     private Double[] peso_or;
-    private Double[][] treinamento_and = new Double[4][3];
-    private Double[][] treinamento_or = new Double[4][3];
+    private Double[][] treinamento_and = {{0.0, 0.0, 0.0},{0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {1.0,1.0,1.0}};
+    private Double[][] treinamento_or = {{0.0, 0.0, 0.0},{0.0, 1.0, 1.0}, {1.0, 0.0, 1.0}, {1.0,1.0,1.0}};
 
     //Funçõ de ativação: Degrau
     private Double Degrau(Double x) {
@@ -55,7 +53,7 @@ public class Perceptron {
         this.x0 = 1.0;
         this.taxa_aprendizado = tx_ap;
         this.erro = 0.0;
-        this.epoca = epocas;
+        this.epoca = epocas; 
         peso_or = new Double[3];
         peso_and = new Double[3];
         Random r = new Random();
@@ -65,26 +63,13 @@ public class Perceptron {
         }
 
         try {
-            FileWriter arq = new FileWriter("saida.txt");
+            FileWriter arq = new FileWriter("saida_perceptron.txt");
             PrintWriter gravarArq = new PrintWriter(arq);
-            BufferedReader brand = new BufferedReader(new FileReader("treinamento_and.txt"));
-            BufferedReader bror = new BufferedReader(new FileReader("treinamento_or.txt"));
-            String[] treino_and;
-            String[] treino_or;
             Double saidaYand = null;
             Double saidaYor = null;
             Double error = null;
             Double[] batelada = new Double[4] ;
-            for (int i = 0; i < 4; i++) {
-                String linha_and = brand.readLine();
-                treino_and = linha_and.split(" ");
-                String linha_or = bror.readLine();
-                treino_or = linha_or.split(" ");
-                for (int j = 0; j < 3; j++) {
-                    this.treinamento_or[i][j] = Double.parseDouble(treino_or[j + 1]);
-                    this.treinamento_and[i][j] = Double.parseDouble(treino_and[j + 1]);
-                }
-            }
+
             for (int j = 0; j < this.epoca; j++) {
 
                 if (!isBatelada) {
@@ -157,8 +142,6 @@ public class Perceptron {
 
             }
             arq.close();
-            brand.close();
-            bror.close();
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }

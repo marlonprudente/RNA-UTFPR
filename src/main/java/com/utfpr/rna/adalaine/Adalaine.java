@@ -5,14 +5,12 @@
  */
 package com.utfpr.rna.adalaine;
 
-import com.utfpr.rna.perceptron.Perceptron;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.Math.*;
-import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -20,7 +18,7 @@ import java.util.Random;
  * @author Marlon Prudente
  */
 public class Adalaine {
-
+    
     public Double[][] matriz_treino;
     public Double taxa_aprendizado;
     public int epoca;
