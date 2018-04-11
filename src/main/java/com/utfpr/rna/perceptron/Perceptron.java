@@ -15,10 +15,7 @@ import java.util.Random;
  * @author Marlon Prudente
  */
 public class Perceptron {
-
-    private Double[] entrada_treino = new Double[2];
-    private Double saida_treino;
-    private Double erro;
+    
     private Double taxa_aprendizado;
     private Double x0;
     private int epoca;
@@ -51,8 +48,7 @@ public class Perceptron {
 
     public Perceptron(Double tx_ap, Integer epocas, Boolean isBatelada) {
         this.x0 = 1.0;
-        this.taxa_aprendizado = tx_ap;
-        this.erro = 0.0;
+        this.taxa_aprendizado = tx_ap;        
         this.epoca = epocas; 
         peso_or = new Double[3];
         peso_and = new Double[3];
@@ -88,8 +84,6 @@ public class Perceptron {
                         //======================================================================================================
                         error = treinamento_or[tam][2] - saidaYor;
                         if (error != 0.0) {
-                            // saidaYor = Degrau(potencialAtivacao(treinamento_or[tam][0], treinamento_or[tam][1], peso_or));
-                            // error = treinamento_or[tam][2] - saidaYor;
                             this.peso_or[0] = regraDelta(x0, peso_or[0], error);
                             this.peso_or[1] = regraDelta(treinamento_or[tam][0], peso_or[1], error);
                             this.peso_or[2] = regraDelta(treinamento_or[tam][1], peso_or[2], error);

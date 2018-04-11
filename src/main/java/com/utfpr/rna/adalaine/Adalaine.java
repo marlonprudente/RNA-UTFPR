@@ -18,7 +18,7 @@ import java.util.Random;
  * @author Marlon Prudente
  */
 public class Adalaine {
-    
+
     public Double[][] matriz_treino;
     public Double taxa_aprendizado;
     public int epoca;
@@ -42,12 +42,13 @@ public class Adalaine {
         taxa_aprendizado = tx_aprend;
         this.epoca = epocas;
         x0 = 1.0;
-        Random r = new Random();
         matriz_treino = new Double[qtPadroes][5];
+        
+        Random r = new Random();        
         for (int i = 0; i < 4; i++) {
             peso[i] = r.nextDouble();
         }
-
+        
         try {
             FileWriter arq = new FileWriter("saida_adalaine.txt");
             PrintWriter gravarArq = new PrintWriter(arq);
@@ -62,7 +63,7 @@ public class Adalaine {
                         matriz_treino[i][j] = Double.parseDouble(treino[j]);
                     }
                 }
-            }            
+            }
             Double saida = 0.0;
             Double erro = 0.0;
             Double eqm = 0.0;
@@ -70,7 +71,7 @@ public class Adalaine {
             //Matriz preenchida
             gravarArq.print("Taxa de Aprendizagem: " + taxa_aprendizado + " | Padroes: " + qtPadroes + "\r\n");
             do {
-                eqm = 0.0;                                
+                eqm = 0.0;
                 if (!isBatelada) {
                     gravarArq.print("=> Aprendizado PADRÃO: >Epoca: " + epoca + " \r\n");
                     for (int i = 0; i < qtPadroes; i++) {
@@ -83,7 +84,7 @@ public class Adalaine {
                             peso[2] = regraDelta(matriz_treino[i][2], peso[2], erro);
                             peso[3] = regraDelta(matriz_treino[i][3], peso[3], erro);
                         }
-                    }                  
+                    }
                     gravarArq.print("w0: " + peso[0] + "w1: " + peso[1] + " w2: " + peso[2] + " w3: " + peso[3] + "\r\n");
                 }
 
@@ -104,7 +105,7 @@ public class Adalaine {
                             batelada[2] += matriz_treino[i][2] * erro;
                             batelada[3] += matriz_treino[i][3] * erro;
                         }
-                    }                    
+                    }
                     peso[0] += (1 / qtPadroes.doubleValue()) * taxa_aprendizado * batelada[0];
                     peso[1] += (1 / qtPadroes.doubleValue()) * taxa_aprendizado * batelada[1];
                     peso[2] += (1 / qtPadroes.doubleValue()) * taxa_aprendizado * batelada[2];
