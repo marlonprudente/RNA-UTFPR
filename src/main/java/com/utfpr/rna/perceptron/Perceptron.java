@@ -22,25 +22,12 @@ public class Perceptron {
     private Double saida_treino;
     private Double erro;
     private Double taxa_aprendizado;
-    private Double teta;
-    private int epoca = 5000;
+    private Double x0;
+    private int epoca;
     private Double[] peso_and;
     private Double[] peso_or;
     private Double[][] treinamento_and = new Double[4][3];
     private Double[][] treinamento_or = new Double[4][3];
-
-    public enum Treinamento {
-        Padrao(0), Batelada(1);
-        private final int valor;
-
-        Treinamento(int valorOpcao) {
-            valor = valorOpcao;
-        }
-
-        public int getValor() {
-            return valor;
-        }
-    }
 
     //Funçõ de ativação: Degrau
     private Double Degrau(Double x) {
@@ -55,7 +42,7 @@ public class Perceptron {
     private Double potencialAtivacao(Double entrada1, Double entrada2, Double pesos[]) {
 
         Double saida = 0.0;
-        saida += pesos[0] * teta;
+        saida += pesos[0] * x0;
         saida += pesos[1] * entrada1;
         saida += pesos[2] * entrada2;
         return saida;
@@ -67,10 +54,11 @@ public class Perceptron {
         return (peso + (this.taxa_aprendizado * erro * entrada));
     }
 
-    public Perceptron(Double tx_ap, Treinamento t) {
-        this.teta = 1.0;
+    public Perceptron(Double tx_ap, Integer epocas, Boolean isBatelada) {
+        this.x0 = 1.0;
         this.taxa_aprendizado = tx_ap;
         this.erro = 0.0;
+        this.epoca = epocas;
         peso_or = new Double[3];
         peso_and = new Double[3];
         Random r = new Random();
@@ -100,47 +88,38 @@ public class Perceptron {
                     this.treinamento_and[i][j] = Double.parseDouble(treino_and[j + 1]);
                 }
             }
-            for (int i = 0; i < 4; i++) {
-                for (int j = 0; j < 3; j++) {
-                    System.out.print("X" + j + ": " + treinamento_and[i][j] + " ");
-                }
-                System.out.println("");
-            }
-
             for (int j = 0; j < this.epoca; j++) {
 
-                if (t == Treinamento.Padrao) {
-                    gravarArq.printf("==>Treinamento Padrao%n");
+                if (!isBatelada) {
+                    gravarArq.printf("==>Treinamento Padrao\r\n");
                     for (int tam = 0; tam < 4; tam++) {
                         saidaYand = Degrau(potencialAtivacao(treinamento_and[tam][0], treinamento_and[tam][1], peso_and));
                         saidaYor = Degrau(potencialAtivacao(treinamento_or[tam][0], treinamento_or[tam][1], peso_or));
                         error = treinamento_and[tam][2] - saidaYand;
                         if (error != 0.0) {
-                            this.peso_and[0] = regraDelta(teta, peso_and[0], error);
+                            this.peso_and[0] = regraDelta(x0, peso_and[0], error);
                             this.peso_and[1] = regraDelta(treinamento_and[tam][0], peso_and[1], error);
                             this.peso_and[2] = regraDelta(treinamento_and[tam][1], peso_and[2], error);
                         }
-                        gravarArq.printf("AND: E1: " + treinamento_and[tam][0] + " E2: " + treinamento_and[tam][1] + " Y: " + treinamento_and[tam][2] + "%n");
-                        gravarArq.printf("AND: w1: " + peso_and[1] + " w2: " + peso_and[2] + " Erro: " + error + " Saida: " + saidaYand + "%n");
+                        gravarArq.printf("AND: w1: " + peso_and[1] + " w2: " + peso_and[2] + " Erro: " + error + " Saida: " + saidaYand + "\r\n");
 
                         //======================================================================================================
                         error = treinamento_or[tam][2] - saidaYor;
                         if (error != 0.0) {
                             // saidaYor = Degrau(potencialAtivacao(treinamento_or[tam][0], treinamento_or[tam][1], peso_or));
                             // error = treinamento_or[tam][2] - saidaYor;
-                            this.peso_or[0] = regraDelta(teta, peso_or[0], error);
+                            this.peso_or[0] = regraDelta(x0, peso_or[0], error);
                             this.peso_or[1] = regraDelta(treinamento_or[tam][0], peso_or[1], error);
                             this.peso_or[2] = regraDelta(treinamento_or[tam][1], peso_or[2], error);
                         }
-                        gravarArq.printf("OR: E1: " + treinamento_or[tam][0] + " E2: " + treinamento_or[tam][1] + " Y: " + treinamento_or[tam][2] + "%n");
-                        gravarArq.printf("OR: w1: " + peso_or[1] + " w2: " + peso_or[2] + " Erro: " + error + " Saida: " + saidaYor + "%n");
-                        gravarArq.print(j + "%n");
+                        gravarArq.printf("OR: w1: " + peso_or[1] + " w2: " + peso_or[2] + " Erro: " + error + " Saida: " + saidaYor + "\r\n");
+                        gravarArq.print(j + "\r\n");
                     }
-                    gravarArq.printf("+-------------+%n");
+                    gravarArq.printf("+-------------+\r\n");
                 }
 
-                if (t == Treinamento.Batelada) {
-                    gravarArq.printf("==>Treinamento Batelada%n");                    
+                if (isBatelada) {
+                    gravarArq.printf("==>Treinamento Batelada\r\n");                    
                     batelada[0] = 0.0;
                     batelada[1] = 0.0;
                     batelada[2] = 0.0;
@@ -148,16 +127,16 @@ public class Perceptron {
                         saidaYand = Degrau(potencialAtivacao(treinamento_and[tam][0], treinamento_and[tam][1], peso_and));
                         error = treinamento_and[tam][2] - saidaYand;
                         if (error != 0) {
-                            batelada[0] += teta*peso_and[0]* error;
-                            batelada[1] += treinamento_and[tam][0]*peso_and[1]* error;
-                            batelada[2] += treinamento_and[tam][1]*peso_and[2]* error;
+                            batelada[0] += x0* error;
+                            batelada[1] += treinamento_and[tam][0]* error;
+                            batelada[2] += treinamento_and[tam][1]* error;
                         }
                     }                    
-                        peso_and[0] += batelada[0];
-                        peso_and[1] += batelada[1];
-                        peso_and[2] += batelada[2];
+                        peso_and[0] += 0.25*taxa_aprendizado*batelada[0];
+                        peso_and[1] += 0.25*taxa_aprendizado*batelada[1];
+                        peso_and[2] += 0.25*taxa_aprendizado*batelada[2];
                     
-                    gravarArq.printf("AND: w1: " + peso_and[1] + " w2: " + peso_and[2] + " Erro: " + error + " Saida: " + saidaYand + "%n");
+                    gravarArq.printf("AND: w1: " + peso_and[1] + " w2: " + peso_and[2] + " Erro: " + error + " Saida: " + saidaYand + "\r\n");
                     //=============================
                     batelada[0] = 0.0;
                     batelada[1] = 0.0;
@@ -166,17 +145,17 @@ public class Perceptron {
                         saidaYor = Degrau(potencialAtivacao(treinamento_or[tam][0], treinamento_or[tam][1], peso_or));
                         error = treinamento_or[tam][2] - saidaYor;
                         if (error != 0) {
-                            batelada[0] += teta*peso_or[0]* error;
-                            batelada[1] += treinamento_or[tam][0]*peso_or[1]* error;
-                            batelada[2] += treinamento_or[tam][1]*peso_or[2]* error;
+                            batelada[0] += x0* error;
+                            batelada[1] += treinamento_or[tam][0]* error;
+                            batelada[2] += treinamento_or[tam][1]* error;
                         }
                     }
-                        peso_or[0] += batelada[0];
-                        peso_or[1] += batelada[1];
-                        peso_or[2] += batelada[2];
-                    gravarArq.printf("OR: w1: " + peso_or[1] + " w2: " + peso_or[2] + " Erro: " + error + " Saida: " + saidaYor + "%n");
-                    gravarArq.print(j + "%n");
-                    gravarArq.printf("+-------------+%n");
+                        peso_or[0] += 0.25*taxa_aprendizado*batelada[0];
+                        peso_or[1] += 0.25*taxa_aprendizado*batelada[1];
+                        peso_or[2] += 0.25*taxa_aprendizado*batelada[2];
+                    gravarArq.printf("OR: w1: " + peso_or[1] + " w2: " + peso_or[2] + " Erro: " + error + " Saida: " + saidaYor + "\r\n");
+                    gravarArq.print("Epoca: " + j + " \r\n");
+                    gravarArq.printf("+-------------+\r\n");
                 }
 
             }
