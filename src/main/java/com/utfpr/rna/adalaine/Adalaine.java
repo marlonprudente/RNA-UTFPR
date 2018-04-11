@@ -72,8 +72,7 @@ public class Adalaine {
             //Matriz preenchida
             gravarArq.print("Taxa de Aprendizagem: " + taxa_aprendizado + " | Padroes: " + qtPadroes + "\r\n");
             do {
-                eqm = 0.0;
-                                
+                eqm = 0.0;                                
                 if (!isBatelada) {
                     gravarArq.print("=> Aprendizado PADRÃO: >Epoca: " + epoca + " \r\n");
                     for (int i = 0; i < qtPadroes; i++) {
@@ -86,7 +85,6 @@ public class Adalaine {
                             peso[2] = regraDelta(matriz_treino[i][2], peso[2], erro);
                             peso[3] = regraDelta(matriz_treino[i][3], peso[3], erro);
                         }
-
                     }                  
                     gravarArq.print("w0: " + peso[0] + "w1: " + peso[1] + " w2: " + peso[2] + " w3: " + peso[3] + "\r\n");
                 }
@@ -117,7 +115,8 @@ public class Adalaine {
                 }
                 epoca--;
                 eqm = 1 / qtPadroes.doubleValue() * eqm;
-            } while (epoca != 0 && eqm > 0.0);
+                gravarArq.print("=>Eqm: " + eqm + " \r\n");
+            } while (epoca != 0 && eqm > 0.001);
             arq.close();
             br.close();
         } catch (IOException ioe) {

@@ -37,10 +37,8 @@ public class Perceptron {
             return 0.0;
         }
     }
-
     //Potencial de Ativação u
     private Double potencialAtivacao(Double entrada1, Double entrada2, Double pesos[]) {
-
         Double saida = 0.0;
         saida += pesos[0] * x0;
         saida += pesos[1] * entrada1;
@@ -50,7 +48,6 @@ public class Perceptron {
 
     //regra de atualização dos pesos
     private Double regraDelta(Double entrada, Double peso, Double erro) {
-
         return (peso + (this.taxa_aprendizado * erro * entrada));
     }
 
@@ -169,16 +166,10 @@ public class Perceptron {
     }
 
     public Double Neuronio_OR(Double[] entrada) {
-        System.out.println("OR: ");
-        System.out.println("Peso 0: " + peso_or[0] + " // Peso 1: " + peso_or[1] + " // Peso 2: " + peso_or[2]);
         return Degrau(potencialAtivacao(entrada[0], entrada[1], peso_or));
-
     }
 
     public Double Neuronio_AND(Double entrada[]) {
-        System.out.println("AND: ");
-        System.out.println("Peso 0: " + peso_and[0] + " // Peso 1: " + peso_and[1] + " // Peso 2: " + peso_and[2]);
-        //System.out.println("Saida: " + Degrau(potencialAtivacao(entrada[0], entrada[1], peso_and)));
         return Degrau(potencialAtivacao(entrada[0], entrada[1], peso_and));
     }
 

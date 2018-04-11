@@ -30,14 +30,17 @@ public class Main {
         Double[] entradas = new Double[2];
         Scanner s = new Scanner(System.in).useLocale(Locale.US);
 
-        System.out.println("[1] - Treinar Perceptron ");
-        System.out.println("[2] - Gerar Padrões Adaline ");
-        System.out.println("[3] - Treinar Adaline ");
-        System.out.println("=============================");
-        System.out.println("[4] - Usar Perceptron AND");
-        System.out.println("[5] - Usar Perceptron OR");
-        System.out.println("[6] - Usar Adaline");
-        System.out.println("[0] - Sair");
+        System.out.println("|==============================|");
+        System.out.println("| [1] - Treinar Perceptron     |");
+        System.out.println("| [2] - Gerar Padrões Adaline  |");
+        System.out.println("| [3] - Treinar Adaline        |");
+        System.out.println("|==============================|");
+        System.out.println("| [4] - Usar Perceptron AND    |");
+        System.out.println("| [5] - Usar Perceptron OR     |");
+        System.out.println("| [6] - Usar Adaline           |");
+        System.out.println("| [0] - Sair                   |");
+        System.out.println("|==============================|");
+        System.out.print("Opção: ");
 
         Integer OP = s.nextInt();
         try {
@@ -70,10 +73,10 @@ public class Main {
                         System.out.println("Batelada? ");
                         opcao = s.next();
                         isBatelada = opcao.equalsIgnoreCase("sim");
-                        if(padroesAdaline == 0){
-                        System.out.println("Digite a quantidade de padrões (dados de treinamento) para treinar o Adaline: ");
-                        padroesAdaline = s.nextInt();
-                        at = new ArquivoTreino(padroesAdaline);
+                        if (padroesAdaline == 0) {
+                            System.out.println("Digite a quantidade de padrões (dados de treinamento) para treinar o Adaline: ");
+                            padroesAdaline = s.nextInt();
+                            at = new ArquivoTreino(padroesAdaline);
                         }
                         System.out.println("Treinando Adaline...");
                         adaline = new Adalaine(taxaAprendizagem, epocas, isBatelada, padroesAdaline);
@@ -112,20 +115,22 @@ public class Main {
                         System.out.println("Opção inválida!");
                         break;
                 }
-                
-                System.out.println("[1] - Treinar Perceptron ");
-                System.out.println("[2] - Gerar Padrões Adaline ");
-                System.out.println("[3] - Treinar Adaline ");
-                System.out.println("=============================");
-                System.out.println("[4] - Usar Perceptron AND");
-                System.out.println("[5] - Usar Perceptron OR");
-                System.out.println("[6] - Usar Adaline");
-                System.out.println("[0] - Sair");
+                System.out.println("|==============================|");
+                System.out.println("| [1] - Treinar Perceptron     |");
+                System.out.println("| [2] - Gerar Padrões Adaline  |");
+                System.out.println("| [3] - Treinar Adaline        |");
+                System.out.println("|==============================|");
+                System.out.println("| [4] - Usar Perceptron AND    |");
+                System.out.println("| [5] - Usar Perceptron OR     |");
+                System.out.println("| [6] - Usar Adaline           |");
+                System.out.println("| [0] - Sair                   |");
+                System.out.println("|==============================|");
+                System.out.print("Opção: ");
                 OP = s.nextInt();
 
-            }            
+            }
             System.out.println("\nIsto fica feliz em ser útil!...");
-            
+
         } catch (InputMismatchException e) {
             System.out.println("" + e);
         }
