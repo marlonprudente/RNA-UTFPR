@@ -7,7 +7,7 @@ package main;
 
 import com.utfpr.rna.adalaine.Adalaine;
 import com.utfpr.rna.adalaine.ArquivoTreino;
-import com.utfpr.rna.perceptron.Perceptron;
+import com.utfpr.rna.perceptron.*;
 import static java.lang.Math.*;
 import java.util.Scanner;
 import java.util.InputMismatchException;
