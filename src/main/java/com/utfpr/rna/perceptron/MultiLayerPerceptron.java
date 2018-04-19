@@ -70,6 +70,7 @@ public class MultiLayerPerceptron {
             Double[][] dwY = new Double[2][3];
             Double saida;
             Double erro;
+            Double eqm = 0.0;
             Double ebp;
             for (int epoca = 0; epoca < this.epocas; epoca++) {
 
@@ -78,6 +79,7 @@ public class MultiLayerPerceptron {
                     Y[1] = Tanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N2"));
                     saida = Tanh(potencialAtivacao(Y[0], Y[1], pesos, "NS"));
                     erro = treinamento_xor[tam][2] - saida;
+                    eqm += pow(erro,2);
                     if(erro > 0.01){
                         //delta
                         ebp = (erro*DerivadaTanh(potencialAtivacao(Y[0], Y[1], pesos, "NS")));
@@ -108,8 +110,14 @@ public class MultiLayerPerceptron {
                         pesos[8] += dwsaida[2];
                     }
                 }
+                eqm = 0.25*eqm;
+                gravarArq.printf("Epoca: " + epoca + " Erro: " + eqm +"\r\n");
+                for(int i = 0; i<w;i++){
+                    gravarArq.printf("w" + i + ": " + pesos[i] + " ");                    
+                }                
+                gravarArq.printf("\r\n");
             }
-
+            arq.close();
         } catch (Exception e) {
             System.out.println("Err: " + e);
         }
