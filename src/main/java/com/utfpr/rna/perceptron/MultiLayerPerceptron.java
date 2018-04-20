@@ -84,8 +84,8 @@ public class MultiLayerPerceptron {
             Double erro;
             Double eqm = 0.0;
             Double ebp;
-            for (int epoca = 0; epoca < this.epocas; epoca++) {
-
+            
+            do {
                 for (int tam = 0; tam < 4; tam++) {
                     Y[0] = Tanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1"));
                     Y[1] = Tanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N2"));
@@ -124,13 +124,17 @@ public class MultiLayerPerceptron {
                     }
                 }
                 eqm = 0.25*eqm;
-                gravarArq.printf("Epoca: " + epoca + " Eqm: " + eqm + "\r\n");
+                epocas--;
+                gravarArq.printf("Epoca: " + epocas + " Eqm: " + eqm + "\r\n");
                 for(int i = 0; i<w;i++){
                     gravarArq.printf("w" + i + ": " + pesos[i] + " ");                    
                 }                
                 gravarArq.printf("\r\n");
-            }
+                
+            }while (epocas != 0 && eqm > 0.001);
+            
             arq.close();
+            
         } catch (Exception e) {
             System.out.println("Err: " + e);
         }
