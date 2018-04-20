@@ -44,9 +44,21 @@ public class MultiLayerPerceptron {
 
     private Double potencialAtivacao(Double entrada1, Double entrada2, Double pesos[], String neuronio) {
         Double saida = 0.0;
+        if(neuronio.equalsIgnoreCase("N1")){
         saida += pesos[0] * x0;
         saida += pesos[1] * entrada1;
         saida += pesos[2] * entrada2;
+        }
+        if(neuronio.equalsIgnoreCase("N2")){
+        saida += pesos[3] * x0;
+        saida += pesos[4] * entrada1;
+        saida += pesos[5] * entrada2;
+        }
+        if(neuronio.equalsIgnoreCase("NS")){
+        saida += pesos[6] * x0;
+        saida += pesos[7] * entrada1;
+        saida += pesos[8] * entrada2;
+        }
         return saida;
     }
 
@@ -79,6 +91,7 @@ public class MultiLayerPerceptron {
                     Y[1] = Tanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N2"));
                     saida = Tanh(potencialAtivacao(Y[0], Y[1], pesos, "NS"));
                     erro = treinamento_xor[tam][2] - saida;
+                    gravarArq.printf("Erro: " + erro + "\r\n");
                     eqm += pow(erro,2);
                     if(erro > 0.01){
                         //delta
@@ -111,7 +124,7 @@ public class MultiLayerPerceptron {
                     }
                 }
                 eqm = 0.25*eqm;
-                gravarArq.printf("Epoca: " + epoca + " Erro: " + eqm +"\r\n");
+                gravarArq.printf("Epoca: " + epoca + " Eqm: " + eqm + "\r\n");
                 for(int i = 0; i<w;i++){
                     gravarArq.printf("w" + i + ": " + pesos[i] + " ");                    
                 }                
@@ -123,6 +136,14 @@ public class MultiLayerPerceptron {
         }
         
         
+    }
+    
+    public Double XOR(Double[] entrada){
+        Double x1, x2;
+        x1 = Tanh(potencialAtivacao(entrada[0], entrada[1], pesos, "N1"));
+        x2 = Tanh(potencialAtivacao(entrada[0], entrada[1], pesos, "N2"));
+        
+        return Tanh(potencialAtivacao(x1, x2, pesos, "NS"));
     }
 
 }
