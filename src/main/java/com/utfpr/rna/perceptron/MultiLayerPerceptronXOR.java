@@ -15,7 +15,7 @@ import java.util.Random;
  *
  * @author Marlon Prudente
  */
-public class MultiLayerPerceptron {
+public class MultiLayerPerceptronXOR {
 
     private Double taxa_aprendizado;
     private Double x0;
@@ -63,7 +63,7 @@ public class MultiLayerPerceptron {
         return saida;
     }
 
-    public MultiLayerPerceptron(Double aprendizado, Integer epocas, Boolean isBatelada) {
+    public MultiLayerPerceptronXOR(Double aprendizado, Integer epocas, Boolean isBatelada) {
         this.x0 = 1.0;
         w = 9;
         this.taxa_aprendizado = aprendizado;
@@ -78,14 +78,14 @@ public class MultiLayerPerceptron {
         try {
             FileWriter arq = new FileWriter("logs/saida_mlp.txt");
             PrintWriter gravarArq = new PrintWriter(arq);
-            Double[] Y = new Double[2];
-            Double[][] dw = new Double[3][3];
-            Double saida;
-            Double erro;
-            Double eqm = 0.0;
-            Double deltinha;
-            Double ebp;
-            Double u;
+            Double[] Y = new Double[2]; //Saida dos neuronios da camada
+            Double[][] dw = new Double[3][3]; // ΔW = n*δ*x  /ou/ ΔW = n*δ*g'(u(w))*x
+            Double saida; // g(u(w))
+            Double erro; // saida desejada - saida
+            Double eqm = 0.0; //Erro quadrático médio
+            Double deltinha; //δ = erro * g'(u(w))
+            Double ebp; //Erro backpropagation
+            Double u; //u = ∑w*x
             do {
                 for (int tam = 0; tam < 4; tam++) {
                     Y[0] = Sigmoidal(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1"));
