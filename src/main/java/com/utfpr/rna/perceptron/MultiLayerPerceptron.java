@@ -95,27 +95,25 @@ public class MultiLayerPerceptron {
                     gravarArq.printf("Erro: " + erro + "\r\n");
                     eqm += pow(erro,2);
                     if(erro != 0.0){
+                        //deltinha==============================================
+                        u = potencialAtivacao(Y[0], Y[1], pesos, "NS");
+                        deltinha = erro*DerivadaSigmoidal(u); 
                         
-                        //deltinha
-                        deltinha = erro*DerivadaSigmoidal(potencialAtivacao(Y[0], Y[1], pesos, "NS")); 
-                        
-                        //deltaW Neuronio 1
-                        ebp = deltinha*pesos[7];
+                        //deltaW Neuronio 1=====================================                      
                         u = potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1");
-                        
+                        ebp = deltinha*pesos[7];                        
                         dw[0][0] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*x0;
                         dw[0][1] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*treinamento_xor[tam][0];
                         dw[0][2] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*treinamento_xor[tam][1];
                         
-                        //deltaW Neuronio 2
-                        ebp = deltinha*pesos[8];
+                        //deltaW Neuronio 2=====================================
                         u = potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N2");
-                        
+                        ebp = deltinha*pesos[8];                        
                         dw[1][0] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*x0;
                         dw[1][1] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*treinamento_xor[tam][0];
                         dw[1][2] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*treinamento_xor[tam][1];  
                         
-                        //deltaW Neuronio Saída
+                        //deltaW Neuronio Saída=================================
                         dw[2][0] = taxa_aprendizado*deltinha*x0;
                         dw[2][1] = taxa_aprendizado*deltinha*Y[0];
                         dw[2][2] = taxa_aprendizado*deltinha*Y[1]; 
@@ -139,7 +137,7 @@ public class MultiLayerPerceptron {
                 epocas--;
                 gravarArq.printf("Epoca: " + epocas + " Eqm: " + eqm + "\r\n");
                 for(int i = 0; i<w;i++){
-                    gravarArq.printf("w" + i + ": " + pesos[i] + " ");                    
+                    gravarArq.printf("w" + i + ": " + pesos[i] + ", ");                    
                 }                
                 gravarArq.printf("\r\n");                
             }while (epocas != 0 && eqm > 0.001);
@@ -155,13 +153,12 @@ public class MultiLayerPerceptron {
     
     public Double XOR(Double[] entrada){
         Double x1, x2;
-        x1 = Tanh(potencialAtivacao(entrada[0], entrada[1], pesos, "N1"));
-        x2 = Tanh(potencialAtivacao(entrada[0], entrada[1], pesos, "N2"));
-        
-        return Degrau(Tanh(potencialAtivacao(x1, x2, pesos, "NS")));
+        x1 = Sigmoidal(potencialAtivacao(entrada[0], entrada[1], pesos, "N1"));
+        x2 = Sigmoidal(potencialAtivacao(entrada[0], entrada[1], pesos, "N2"));        
+        return Sigmoidal(potencialAtivacao(x1, x2, pesos, "NS"));
     }
     
-        //Funçõ de ativação: Degrau
+    //Funçõ de ativação: Degrau
     private Double Degrau(Double x) {
         if (x > 0) {
             return 1.0;
