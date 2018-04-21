@@ -13,10 +13,10 @@ import com.utfpr.rna.perceptron.MultiLayerPerceptron;
  */
 public class MLP {
     public static void main(String[] args) {
-        MultiLayerPerceptron mlp = new MultiLayerPerceptron(0.005, 50000, true);
+        MultiLayerPerceptron mlp = new MultiLayerPerceptron(0.05, 5000, true);
         Double[] entrada = new Double[2];
-        entrada[0] = 0.0;
-        entrada[1] = 0.0;
+        entrada[0] = 1.0;
+        entrada[1] = 1.0;
         System.out.println("XOR: " + mlp.XOR(entrada));
     }
     

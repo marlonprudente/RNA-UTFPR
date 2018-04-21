@@ -6,6 +6,7 @@
 package com.utfpr.rna.perceptron;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import static java.lang.Math.*;
 import java.util.Random;
@@ -78,50 +79,61 @@ public class MultiLayerPerceptron {
             FileWriter arq = new FileWriter("logs/saida_mlp.txt");
             PrintWriter gravarArq = new PrintWriter(arq);
             Double[] Y = new Double[2];
-            Double[] dwsaida = new Double[3];
-            Double[][] dwY = new Double[2][3];
+            Double[][] dw = new Double[3][3];
             Double saida;
             Double erro;
             Double eqm = 0.0;
+            Double deltinha;
             Double ebp;
-            
+            Double u;
             do {
                 for (int tam = 0; tam < 4; tam++) {
-                    Y[0] = Tanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1"));
-                    Y[1] = Tanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N2"));
-                    saida = Tanh(potencialAtivacao(Y[0], Y[1], pesos, "NS"));
+                    Y[0] = Sigmoidal(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1"));
+                    Y[1] = Sigmoidal(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N2"));
+                    saida = Sigmoidal(potencialAtivacao(Y[0], Y[1], pesos, "NS"));
                     erro = treinamento_xor[tam][2] - saida;
                     gravarArq.printf("Erro: " + erro + "\r\n");
                     eqm += pow(erro,2);
-                    if(erro > 0.01){
-                        //delta
-                        ebp = (erro*DerivadaTanh(potencialAtivacao(Y[0], Y[1], pesos, "NS")));
-                        //deltaW Neuronio Saída
-                        dwsaida[0] = taxa_aprendizado*ebp*x0;
-                        dwsaida[1] = taxa_aprendizado*ebp*Y[0];
-                        dwsaida[2] = taxa_aprendizado*ebp*Y[1];                        
+                    if(erro != 0.0){
+                        
+                        //deltinha
+                        deltinha = erro*DerivadaSigmoidal(potencialAtivacao(Y[0], Y[1], pesos, "NS")); 
+                        
                         //deltaW Neuronio 1
-                        dwY[0][0] =  taxa_aprendizado*ebp*pesos[7]*DerivadaTanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1"))*x0;
-                        dwY[0][1] =  taxa_aprendizado*ebp*pesos[7]*DerivadaTanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1"))*treinamento_xor[tam][0];
-                        dwY[0][2] =  taxa_aprendizado*ebp*pesos[7]*DerivadaTanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1"))*treinamento_xor[tam][1];                        
+                        ebp = deltinha*pesos[7];
+                        u = potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1");
+                        
+                        dw[0][0] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*x0;
+                        dw[0][1] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*treinamento_xor[tam][0];
+                        dw[0][2] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*treinamento_xor[tam][1];
+                        
                         //deltaW Neuronio 2
-                        dwY[1][0] =  taxa_aprendizado*ebp*pesos[8]*DerivadaTanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1"))*x0;
-                        dwY[1][1] =  taxa_aprendizado*ebp*pesos[8]*DerivadaTanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1"))*treinamento_xor[tam][0];
-                        dwY[1][2] =  taxa_aprendizado*ebp*pesos[8]*DerivadaTanh(potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N1"))*treinamento_xor[tam][1];                       
+                        ebp = deltinha*pesos[8];
+                        u = potencialAtivacao(treinamento_xor[tam][0], treinamento_xor[tam][1], pesos, "N2");
+                        
+                        dw[1][0] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*x0;
+                        dw[1][1] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*treinamento_xor[tam][0];
+                        dw[1][2] =  taxa_aprendizado*ebp*DerivadaSigmoidal(u)*treinamento_xor[tam][1];  
+                        
+                        //deltaW Neuronio Saída
+                        dw[2][0] = taxa_aprendizado*deltinha*x0;
+                        dw[2][1] = taxa_aprendizado*deltinha*Y[0];
+                        dw[2][2] = taxa_aprendizado*deltinha*Y[1]; 
                         
                         //Atualização pesos Neuronio 1
-                        pesos[0] += dwY[0][0];
-                        pesos[1] += dwY[0][1];
-                        pesos[2] += dwY[0][2];
+                        pesos[0] += dw[0][0];
+                        pesos[1] += dw[0][1];
+                        pesos[2] += dw[0][2];
                         //Atualização pesos Neuronio 2
-                        pesos[3] += dwY[1][0];
-                        pesos[4] += dwY[1][1];
-                        pesos[5] += dwY[1][2];
+                        pesos[3] += dw[1][0];
+                        pesos[4] += dw[1][1];
+                        pesos[5] += dw[1][2];
                         //Atualização pesos Neuronio Saída
-                        pesos[6] += dwsaida[0];
-                        pesos[7] += dwsaida[1];
-                        pesos[8] += dwsaida[2];
+                        pesos[6] += dw[2][0];
+                        pesos[7] += dw[2][1];
+                        pesos[8] += dw[2][2];
                     }
+
                 }
                 eqm = 0.25*eqm;
                 epocas--;
@@ -129,13 +141,12 @@ public class MultiLayerPerceptron {
                 for(int i = 0; i<w;i++){
                     gravarArq.printf("w" + i + ": " + pesos[i] + " ");                    
                 }                
-                gravarArq.printf("\r\n");
-                
+                gravarArq.printf("\r\n");                
             }while (epocas != 0 && eqm > 0.001);
             
             arq.close();
             
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Err: " + e);
         }
         
@@ -147,7 +158,16 @@ public class MultiLayerPerceptron {
         x1 = Tanh(potencialAtivacao(entrada[0], entrada[1], pesos, "N1"));
         x2 = Tanh(potencialAtivacao(entrada[0], entrada[1], pesos, "N2"));
         
-        return Tanh(potencialAtivacao(x1, x2, pesos, "NS"));
+        return Degrau(Tanh(potencialAtivacao(x1, x2, pesos, "NS")));
+    }
+    
+        //Funçõ de ativação: Degrau
+    private Double Degrau(Double x) {
+        if (x > 0) {
+            return 1.0;
+        } else {
+            return 0.0;
+        }
     }
 
 }
