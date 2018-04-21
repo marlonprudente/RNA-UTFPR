@@ -18,7 +18,7 @@ public class ArquivoTreino {
     public ArquivoTreino(Integer qtTreino) {
         Double z;
         try {
-            FileWriter arq = new FileWriter("logs/treino_adaline.txt");
+            FileWriter arq = new FileWriter("input_data/treino_adaline.txt");
             PrintWriter gravarArq = new PrintWriter(arq);
            
             for(Double i = 0.0;i<qtTreino;i++){

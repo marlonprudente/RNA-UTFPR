@@ -15,7 +15,7 @@ public class MLP {
     public static void main(String[] args) {
         MultiLayerPerceptronXOR mlp = new MultiLayerPerceptronXOR(0.05, 50000, true);
         Double[] entrada = new Double[2];
-        entrada[0] = 1.0;
+        entrada[0] = 0.0;
         entrada[1] = 1.0;
         System.out.println("XOR: " + mlp.XOR(entrada));
     }

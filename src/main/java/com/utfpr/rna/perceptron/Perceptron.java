@@ -59,7 +59,7 @@ public class Perceptron {
         }
 
         try {
-            FileWriter arq = new FileWriter("logs/saida_perceptron.txt");
+            FileWriter arq = new FileWriter("output_data/saida_perceptron.txt");
             PrintWriter gravarArq = new PrintWriter(arq);
             Double saidaYand = null;
             Double saidaYor = null;

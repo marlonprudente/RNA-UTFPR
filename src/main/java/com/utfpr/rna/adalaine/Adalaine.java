@@ -50,9 +50,9 @@ public class Adalaine {
         }
         
         try {
-            FileWriter arq = new FileWriter("logs/saida_adalaine.txt");
+            FileWriter arq = new FileWriter("output_data/saida_adalaine.txt");
             PrintWriter gravarArq = new PrintWriter(arq);
-            BufferedReader br = new BufferedReader(new FileReader("logs/treino_adaline.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("input_data/treino_adaline.txt"));
             String[] treino;
             String linha;
             while (br.ready()) {
