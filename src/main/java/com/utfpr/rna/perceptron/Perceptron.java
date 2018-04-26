@@ -12,7 +12,7 @@ import java.util.Random;
 
 /**
  *
- * @author Marlon Prudente
+* @author Marlon Prudente <marlonoliveira at alunos.utfpr.edu.br>
  */
 public class Perceptron {
     

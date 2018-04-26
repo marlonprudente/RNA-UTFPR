@@ -15,7 +15,7 @@ import java.util.Locale;
 
 /**
  *
- * @author Marlon Prudente
+* @author Marlon Prudente <marlonoliveira at alunos.utfpr.edu.br>
  */
 public class Main {
 

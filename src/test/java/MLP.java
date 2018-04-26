@@ -10,7 +10,7 @@ import java.io.IOException;
 
 /**
  *
- * @author Marlon Prudente
+* @author Marlon Prudente <marlonoliveira at alunos.utfpr.edu.br>
  */
 public class MLP {
     public static void main(String[] args) throws IOException {

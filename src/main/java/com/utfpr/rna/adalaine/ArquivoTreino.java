@@ -11,7 +11,7 @@ import static java.lang.Math.*;
 
 /**
  *
- * @author Marlon Prudente
+* @author Marlon Prudente <marlonoliveira at alunos.utfpr.edu.br>
  */
 public class ArquivoTreino {
 
